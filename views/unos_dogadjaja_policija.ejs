@@ -1,0 +1,33 @@
+<html lang="hr">
+
+    <% if (user.email.split('@').reverse()[0] !== "mup.hr") { %>
+        <script>window.location.href = "/";</script>
+    <% } %>
+
+    <%- include("./partials/head.ejs") %>
+<body>
+    <%- include("./partials/nav.ejs") %>
+    <div>
+        <h1>Dodaj događaj</h1><br>
+
+            <form action="/dogadjaj/dodaj_policija" method="post">
+            <label for="dog_OIB">OIB osobe:</label>
+            <input type="text" name="dog_OIB" size="50" required="required"><br>
+            <label for="dog_vrijeme">Vrijeme događaja:</label>
+            <input type="date" name="dog_vrijeme" required="required"><br>
+            <label for="id_ustanova">Ustanova: </label>
+                <select name="id_ustanova">
+                    <option value="zg_1pp">1 (prva) policijska postaja - Zagreb</option>
+                    <option value="sam_2pp">2 (druga) policijska postaja - Samobor</option>
+                    <option value="ds_3pp">3 (treća) policijska postaja - Dugo Selo</option>
+                </select><br>
+            <label for="vrsta_dogadjaj">Vrsta događaja: </label>
+                <select name="vrsta_dogadjaj">
+                    <option value="Posjedovanje opojnih sredstava">Posjedovanje opojnih sredstava</option>
+                    <option value="Obiteljsko nasilje">Obiteljsko nasilje</option>
+                </select><br><br>
+                <button type="submit">Pošalji</button>
+    </div>
+    <%- include("./partials/footer.ejs") %>
+</body>
+</html>

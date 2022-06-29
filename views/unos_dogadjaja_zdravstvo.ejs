@@ -1,0 +1,33 @@
+<html lang="hr">
+
+    <% if (user.email.split('@').reverse()[0] !== "miz.hr") { %>
+        <script>window.location.href = "/";</script>
+    <% } %>
+
+<%- include("./partials/head.ejs") %>
+<body>
+    <%- include("./partials/nav.ejs") %>
+    <div>
+        <h1>Dodaj događaj</h1><br>
+
+            <form action="/dogadjaj/dodaj_zdravstvo" method="post">
+            <label for="dog_OIB">OIB osobe:</label>
+            <input type="text" name="dog_OIB" size="50" required="required"><br>
+            <label for="dog_vrijeme">Vrijeme događaja:</label>
+            <input type="date" name="dog_vrijeme" required="required"><br>
+            <label for="id_ustanova">Ustanova: </label>
+                <select name="id_ustanova">
+                    <option value="zg_KBC">Klinički bolnički centar - Zagreba</option>
+                    <option value="sam_DZ">Dom zdravlja - Samobora</option>
+                    <option value="ds_DZ">Dom zdravlja - Dugo Selo</option>
+                </select><br>
+            <label for="vrsta_dogadjaj">Vrsta događaja: </label>
+                <select name="vrsta_dogadjaj">
+                    <option value="Lom kosti na nespecifičnom mjestu">Lom kosti na nespecifičnom mjestu</option>
+                    <option value="Modrica na nespecifičnom mjestu">Modrica na nespecifičnom mjestu</option>
+                </select><br><br>
+            <button type="submit">Pošalji</button>
+    </div>
+    <%- include("./partials/footer.ejs") %>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<html lang="hr">
+
+    <% if (user.email.split('@').reverse()[0] !== "skole.hr") { %>
+        <script>window.location.href = "/";</script>
+    <% } %>
+
+<%- include("./partials/head.ejs") %>
+<body>
+    <%- include("./partials/nav.ejs") %>
+    <div>
+        <h1>Dodaj događaj</h1><br>
+
+            <form action="/dogadjaj/dodaj_skola" method="post">
+            <label for="dog_OIB">OIB osobe:</label>
+            <input type="text" name="dog_OIB" size="50" required="required"><br>
+            <label for="dog_vrijeme">Vrijeme događaja:</label>
+            <input type="date" name="dog_vrijeme" required="required"><br>
+            <label for="id_ustanova">Ustanova: </label>
+                <select name="id_ustanova">
+                    <option value="zg_osig">Osnovna škola Ivana Gundulića - Zagreb</option>
+                    <option value="zg_osml">Osnovna škola Matka Laginje - Zagreb</option>
+                    <option value="sam_osbt">Osnovna škola Bogumila Tonija - Samobor</option>
+                    <option value="sam_osr">Osnovna škola Rude - Samobor</option>
+                    <option value="ds_osjz">Osnovna škola Josipa Zorića - Dugo Selo</option>
+                    <option value="ds_osib">Osnovna škola Ivan Benković - Dugo Selo</option>
+                </select><br>
+            <label for="vrsta_dogadjaj">Vrsta događaja: </label>
+                <select name="vrsta_dogadjaj">
+                    <option value="Izuzetno povučeno dijete">Izuzetno povučeno dijete</option>
+                    <option value="Česti neopravdani izostanci">Česti neopravdani izostanci</option>
+                </select><br><br>
+                <button type="submit">Pošalji</button>
+    </div>
+    <%- include("./partials/footer.ejs") %>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<nav>
+  <div class="site-title">
+    <a href="/"><h1>Alarm - FOI</h1></a>
+    <% if(user) { %>
+    <p>Dobrodošli <%=user.name %></p>
+    <% } else { %>
+    <p>Neregistrirani korisnik</p>
+    <% } %>
+  </div>
+  <ul>
+    <a href="/">O aplikaciji</a>
+    <% if(user) { %> <% if (user.email.split('@').reverse()[0] === "mup.hr") {
+    %>
+    <a href="/unos_dogadjaja_policija"> | Unos događaja - Policija</a>
+    <% } else if (user.email.split('@').reverse()[0] === "czss.hr") { %>
+    <a href="/unos_dogadjaja_socijalna"> | Unos događaja - CZSS</a>
+    <% } else if (user.email.split('@').reverse()[0] === "miz.hr") { %>
+    <a href="/unos_dogadjaja_zdravstvo"> | Unos događaja - Zdravstvo</a>
+    <% } else if (user.email.split('@').reverse()[0] === "skole.hr") { %>
+    <a href="/unos_dogadjaja_skola"> | Unos događaja - Škola</a>
+    <% } else { %>
+    <a href="/unos_dogadjaja_ostali"> | Unos događaja - Ostali</a>
+    <% } %> <% } %> <% if(user) { %>
+    <a href="/stanje"> | Ukupna lista</a>
+    <a href="/lista"> | Alarm lista</a>
+    <% } %> <% if(!isAuthenticated) { %>
+    <a href="/login/"> | Login</a>
+    <% } else { %>
+    <a href="/logout/"> | Logout</a>
+    <% } %>
+  </ul>
+</nav>

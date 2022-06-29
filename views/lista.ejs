@@ -1,0 +1,36 @@
+<html lang="hr">
+  <%- include("./partials/head.ejs") %>
+  <body>
+    <%- include("./partials/nav.ejs") %>
+
+    <h1>Alarm</h1>
+
+    <table id="myTable" border="1" style="width: 99%">
+      <thead>
+        <tr>
+          <th style="width: 20%">Ime</th>
+          <th style="width: 20%">Prezime</th>
+          <th style="width: 20%">OIB</th>
+          <th style="width: 20%">Nadzor</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% osobe.forEach(function(osoba){ %> <% if (osoba.nadzor == 'false') {
+        %>
+        <tr>
+          <td><%= osoba.ime %></td>
+          <td><%= osoba.prezime %></td>
+          <td><%= osoba.OIB %></td>
+          <td style="text-align: center">
+            <form action="lista" method="post">
+              <input type="hidden" name="nadzor_OIB" value="<%= osoba.OIB %>" />
+              <button type="submit">Poslati nadzor</button>
+            </form>
+          </td>
+        </tr>
+        <% } %> <% }) %>
+      </tbody>
+    </table>
+    <%- include("./partials/footer.ejs") %>
+  </body>
+</html>
