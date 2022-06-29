@@ -18,4 +18,7 @@ Alarm listu s top 10 ugrožene djece mogu vidjeti svi i uputiti nadzor te to pot
 Korisnik ima pregled svih osoba (Ukupna lista) kako bi utvrdio ima li ispravan OIB.
 Svaki korisnik može unjeti događaj, a u skladu sa svojim ovlastima (Unos događaja - "područje")
 
+
+Aplikacija je rađena uz pomoć Node.js. Ukoliko se želi dobiti izvršna datoteka (za Windows, Linux i MacOS) potrebno je uz pomoć komande "npm pkg" skinuti potrebni dodataka i pokrenuti pakiranje aplikacije u izvršnu datoteku komandom "pkg ."
+
 U slučaju nefunkcionalnosti ili bilo kakvih upita kontaktirati autora aplikacije, Zlatka Pračića na e-mail: zpracic@foi.hr
