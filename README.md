@@ -17,3 +17,5 @@ Ostale institucije mogu pristupiti dijelu vezanom uz njihov djelokrug rada.
 Alarm listu s top 10 ugrožene djece mogu vidjeti svi i uputiti nadzor te to potvrditi klikom na gumb "Poslati nadzor". Nakon klika na gumb, djete se uklanja s popisa i lista se penje za jedno mjesto.
 Korisnik ima pregled svih osoba (Ukupna lista) kako bi utvrdio ima li ispravan OIB.
 Svaki korisnik može unjeti događaj, a u skladu sa svojim ovlastima (Unos događaja - "područje")
+
+U slučaju nefunkcionalnosti ili bilo kakvih upita kontaktirati autora aplikacije, Zlatka Pračića na e-mail: zpracic@foi.hr
