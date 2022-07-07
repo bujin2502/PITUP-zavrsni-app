@@ -11,18 +11,19 @@
     <a href="/">O aplikaciji</a>
     <% if(user) { %> <% if (user.email.split('@').reverse()[0] === "mup.hr") {
     %>
-    <a href="/unos_dogadjaja_policija"> | Unos događaja - Policija</a>
+    <a href="/unos_dogadjaja_policija"> | Unos događaja</a>
     <% } else if (user.email.split('@').reverse()[0] === "czss.hr") { %>
-    <a href="/unos_dogadjaja_socijalna"> | Unos događaja - CZSS</a>
+    <a href="/unos_dogadjaja_socijalna"> | Unos događaja</a>
     <% } else if (user.email.split('@').reverse()[0] === "miz.hr") { %>
-    <a href="/unos_dogadjaja_zdravstvo"> | Unos događaja - Zdravstvo</a>
+    <a href="/unos_dogadjaja_zdravstvo"> | Unos događaja</a>
     <% } else if (user.email.split('@').reverse()[0] === "skole.hr") { %>
-    <a href="/unos_dogadjaja_skola"> | Unos događaja - Škola</a>
+    <a href="/unos_dogadjaja_skola"> | Unos događaja</a>
     <% } else { %>
-    <a href="/unos_dogadjaja_ostali"> | Unos događaja - Ostali</a>
+    <a href="/unos_dogadjaja_ostali"> | Unos događaja</a>
     <% } %> <% } %> <% if(user) { %>
-    <a href="/stanje"> | Ukupna lista</a>
-    <a href="/lista"> | Alarm lista</a>
+    <a href="/stanje"> | Lista OIB</a>
+    <a href="/lista"> | Alarm</a>
+    <a href="/analiticki_prikaz"> | Prikaz</a>
     <% } %> <% if(!isAuthenticated) { %>
     <a href="/login/"> | Login</a>
     <% } else { %>
