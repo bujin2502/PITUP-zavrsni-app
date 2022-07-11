@@ -63,7 +63,7 @@ app.get('/stanje', function(req, res){
 // Lista ALARM
 app.get('/lista', function(req, res){
     session
-        .run('MATCH (o1:Osoba)-[r1:OBITELJ]->(o2:Osoba) WHERE (date().year - toInteger(o1.godiste)) < 18 AND o1.nadzor = "false" CALL { WITH o2 MATCH (o2)-[r2:ZAKONSKI]->(zp) RETURN COUNT(zp) AS a } CALL { WITH o2 MATCH (o2)-[r3:SOCIJALNI]->(sp) RETURN COUNT(sp) AS b } CALL { WITH o1 MATCH (o1)-[r4:NEPRILAGODJENO]->(skp) RETURN COUNT(skp) AS c } CALL { WITH o1 MATCH (o1)-[r5:ZDRAVSTVENI]->(zdp) RETURN COUNT(zdp) AS d } RETURN o1, SUM(a + b + c + d) AS Bodovi ORDER BY Bodovi DESC LIMIT 10')
+        .run('MATCH (o1:Osoba) WHERE (date().year - toInteger(o1.godiste)) < 18 AND o1.nadzor = "false" OPTIONAL MATCH (o1)-[r1]->(ps:`ProblemŠkola`) OPTIONAL MATCH (o1)-[r2]->(zdp:`ZdravstveniProblem`) OPTIONAL MATCH (o1)-[r3]->(o2:Osoba)-[r4]->(zp:ZakonskiProblem) OPTIONAL MATCH (o1)-[r5]->(o2:Osoba)-[r6]->(sp:SocijalniProblem) RETURN o1, count(distinct r1)+count(distinct r2)+count(distinct r4)+count(distinct r6) AS Bodovi ORDER BY Bodovi DESC LIMIT 10')
         .then(function(result){
             var osoba = [];
             result.records.forEach(function(record){

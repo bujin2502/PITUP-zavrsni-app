@@ -103,3 +103,10 @@ select {
   background-color: #025E73;
   border: 1px solid #ddd;
 }
+
+#viz {
+  width: 900px;
+  height: 700px;
+  border: 1px solid lightgray;
+  font: 22pt arial;
+}
