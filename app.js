@@ -2,8 +2,10 @@ const express = require('express');
 const neo4j = require('neo4j-driver');
 const bodyParser = require('body-parser');
 const { auth } = require('express-openid-connect');
-// const { text } = require('express');
-require('dotenv').config()
+
+const opener = require('opener');
+ 
+opener('http://localhost:3000');
 
 const config = {
     authRequired: false,
@@ -27,6 +29,7 @@ const port = 3000;
 app.listen(port);
 
 module.exports = app;
+
 
 // Otvaranje sesije
 var driver = neo4j.driver('neo4j+s://36e5e105.databases.neo4j.io', neo4j.auth.basic('neo4j', 'Eg7O6ak1ErjFPeCwsi-IMcQds9gWKcQDDUx8jBN9mco'));
