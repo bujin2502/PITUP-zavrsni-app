@@ -1,6 +1,7 @@
 # PITUP-zavrsni-app
 
 Za pokretanje apliacije "Alarm", nakon skidanja na osobno računalo potrebno je sljedeće:
+
 0. Pretpostavka je kako je instaliran Node.js na računalo.
 1. Unutar mape s datotekama pokrenuti komandni redak i instalirati potrebne dodatke uz pomoć komande "npm install" (po potrebi kao administrator / sudo)
 2. Pokrenuti aplikaciju uz komandu "nodemon app"
