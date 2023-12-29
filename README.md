@@ -23,5 +23,3 @@ Moguć je grafički prikaz. Prvi tab daje model baze podataka.
 Drugi tab ima tri ploče, prva je popis 10 ugrožene djece, drugi je namjenjen unosu OIB-a kako bi se u trećem mogla vidjeti ukupna situacija vezana uz dijete čiji je OIB unešen.
 
 Aplikacija je rađena uz pomoć Node.js. Ukoliko se želi dobiti izvršna datoteka (za Windows, Linux i MacOS) potrebno je uz pomoć komande "npm pkg" skinuti potrebni dodataka i pokrenuti pakiranje aplikacije u izvršnu datoteku komandom "pkg ."
-
-U slučaju nefunkcionalnosti ili bilo kakvih upita kontaktirati autora aplikacije, Zlatka Pračića na e-mail: zpracic@foi.hr
